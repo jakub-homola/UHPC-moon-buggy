@@ -130,6 +130,7 @@ moduleclass = 'tools'
 * **Task**: *install `moon-buggy` from easyconfig*
 
 ```console
+$ ml EasyBuild
 $ eb moon-buggy-1.0.eb -r
 == temporary log file in case of crash /tmp/eb-ctAvZY/easybuild-GQkRPM.log
 == resolving dependencies ...
