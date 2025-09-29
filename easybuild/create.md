@@ -34,6 +34,7 @@ $ ./moon-buggy
 * **Task**: *create easyconfig for `moon-buggy` (use template)* ([Download template.eb](template.eb))
 
 ```console
+$ wget https://code.it4i.cz/jar091/moon-buggy/-/raw/master/easybuild/template.eb
 $ cp template.eb moon-buggy-1.0.eb
 ```
 
