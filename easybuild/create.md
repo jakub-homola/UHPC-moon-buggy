@@ -151,6 +151,7 @@ $ eb moon-buggy-master.eb -r
 
 ```console
 $ module use /home/$HOME/.local/easybuild/modules/all
-$ ml moon-buggy/master-loginXXX
+$ ml av moon-buggy
+$ ml moon-buggy
 $ moon-buggy
 ```
