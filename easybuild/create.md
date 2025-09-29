@@ -109,7 +109,7 @@ preconfigopts = "./autogen.sh && "
 * **Task**: *DEPENDENCY*
 
 ```python
- ('ncurses', '6.1', ''),
+ ('ncurses', '6.2', ''),
 ```
 
 * **Task**: *SANITY_CHECK_PATH* ... you must check exists binary file
