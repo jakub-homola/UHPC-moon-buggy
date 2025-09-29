@@ -31,7 +31,7 @@ $ ./moon-buggy
 
 ## Create Easyconfog From Template
 
-* **Task**: *create easyconfig for `moon-buggy` (use template)* ([Download template.eb](template.eb))
+* **Task**: *create easyconfig for `moon-buggy` (use template)* (Download template.eb)
 
 ```console
 $ wget https://code.it4i.cz/jar091/moon-buggy/-/raw/master/easybuild/template.eb
