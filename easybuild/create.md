@@ -35,7 +35,7 @@ $ ./moon-buggy
 
 ```console
 $ wget https://code.it4i.cz/jar091/moon-buggy/-/raw/master/easybuild/template.eb
-$ cp template.eb moon-buggy-1.0.eb
+$ cp template.eb moon-buggy-master.eb
 ```
 
 * **Task**: *EASYBLOCK* ... choose easyblock (Analyse manual instalation - only step CONFIGURE AND MAKE -> choose easyblock `ConfigureMake`)
@@ -53,7 +53,7 @@ name = 'moon-buggy'
 * **Task**: *VERSION* ... defined versions of the software
 
 ```python
-version = "1.0"
+version = "master"
 ```
 
 * **Task**: *VERSIONSUFFIX* ... add your login
@@ -79,7 +79,7 @@ dangerous craters there.  Fortunately your car can jump over them!"""
 * **Task**: *TOOLCHAIN* ... choose toolchain
 
 ```python
-toolchain = {'name': 'GCC', '14.3.0': ''}
+toolchain = {'name': 'GCCcore', 'version': '10.2.0'}
 ```
 
 * **Task**: *SOURCE_URLS* ... source urls
@@ -103,13 +103,13 @@ preconfigopts = "./autogen.sh && "
 * **Task**: *BUILDDEPENDENCY*
 
 ```python
-('Autoconf', '2.69')
+('Autoconf', '2.69', '')
 ```
 
 * **Task**: *DEPENDENCY*
 
 ```python
- ('ncurses', '6.1'),
+ ('ncurses', '6.1', ''),
 ```
 
 * **Task**: *SANITY_CHECK_PATH* ... you must check exists binary file
@@ -132,16 +132,16 @@ moduleclass = 'tools'
 ```console
 $ ml purge
 $ ml EasyBuild
-$ eb moon-buggy-1.0.eb -r
+$ eb moon-buggy-master.eb -r
 == temporary log file in case of crash /tmp/eb-ctAvZY/easybuild-GQkRPM.log
 == resolving dependencies ...
-== processing EasyBuild easyconfig /home/loginXXX/game/moon-buggy-1.0.eb
-== building and installing moon-buggy/1.0-loginXXX...
+== processing EasyBuild easyconfig /home/loginXXX/game/moon-buggy-master.eb
+== building and installing moon-buggy/master-loginXXX...
 == fetching files...
 ...
 ...
 == COMPLETED: Installation ended successfully
-== Results of the build can be found in the log file(s) /home/loginXXX/.local/easybuild/software/moon-buggy/1.0-loginXXX/easybuild/easybuild-moon-buggy-1.0-20181016.094918.log
+== Results of the build can be found in the log file(s) /home/loginXXX/.local/easybuild/software/moon-buggy/master-loginXXX/easybuild/easybuild-moon-buggy-master-20181016.094918.log
 == Build succeeded for 1 out of 1
 == Temporary log file(s) /tmp/eb-ctAvZY/easybuild-GQkRPM.log* have been removed.
 == Temporary directory /tmp/eb-ctAvZY has been removed.
@@ -150,6 +150,7 @@ $ eb moon-buggy-1.0.eb -r
 * **Task**: *load module and run `moon-buggy`*
 
 ```console
-$ ml moon-buggy/1.0-loginXXX
+$ module use /home/$HOME/.local/easybuild/modules/all
+$ ml moon-buggy/master-loginXXX
 $ moon-buggy
 ```
