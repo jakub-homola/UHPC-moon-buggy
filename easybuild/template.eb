@@ -1,0 +1,28 @@
+# IT4Innovations 2018
+
+easyblock =
+
+name =
+version =
+versionsuffix =
+
+homepage =
+description = """ """
+
+toolchain = {'name': '', 'version': ''}
+
+source_urls = ['']
+sources = ['']
+
+preconfigopts =
+
+builddependencies = []
+
+dependencies = []
+
+sanity_check_paths = {
+    'files': [],
+    'dirs': [],
+}
+
+moduleclass = ''
