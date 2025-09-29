@@ -29,7 +29,7 @@ buggy.c         config.h      COPYING        depcomp    highscore.c  instcmds   
 $ ./moon-buggy
 ```
 
-## Create Easyconfog From Template
+## Create Easyconfig From Template
 
 * **Task**: *create easyconfig for `moon-buggy` (use template)*
 
