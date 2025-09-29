@@ -9,14 +9,14 @@ Homepage:     [https://github.com/seehuhn/moon-buggy](https://github.com/seehuhn
 **Description**
 Moon-buggy is a simple character graphics game, where you drive some kind of car across the moon's surface. Unfortunately there are dangerous craters there. Fortunately your car can jump over them!
 
-## Manual Installation
+## Manual Installation (Skip this step)
 
 ```console
-$ wget https://code.it4i.cz/kru0052/moon-buggy/-/archive/1.0/moon-buggy-1.0.tar.gz
-$ tar xvf moon-buggy-1.0.tar.gz
-$ cd moon-buggy-1.0
+$ wget https://code.it4i.cz/jar091/moon-buggy/-/archive/master/moon-buggy-master.tar.gz
+$ tar xvf moon-buggy-master.tar.gz
+$ cd moon-buggy-master
 $ ./autogen.sh
-$ ./configure --prefix=/home/kru0052/game/moon-buggy-build
+$ ./configure --prefix=$HOME/game/moon-buggy-build
 $ make
 $ ls
 acinclude.m4    buggy.h       config.h.in    copying.h  error.c      highscore.o  keyboard.c  main.o       meteor.o      moon-buggy.info  pager.o    README      terminal.c        title.eps     xmalloc.o
@@ -58,7 +58,7 @@ version = "1.0"
 * **Task**: *VERSIONSUFFIX* ... add your login
 
 ```python
-versionsuffix = "-kru0052"
+versionsuffix = "-loginXXX"
 ```
 
 * **Task**: *HOMEPAGE* ... homepage url
@@ -78,13 +78,13 @@ dangerous craters there.  Fortunately your car can jump over them!"""
 * **Task**: *TOOLCHAIN* ... choose toolchain
 
 ```python
-toolchain = {'name': 'dummy', 'version': ''}
+toolchain = {'name': 'GCC', '14.3.0': ''}
 ```
 
 * **Task**: *SOURCE_URLS* ... source urls
 
 ```python
-source_urls = ['https://code.it4i.cz/kru0052/moon-buggy/-/archive/%(version)s/']
+source_urls = ['https://code.it4i.cz/jar091/moon-buggy/-/archive/%(version)s/']
 ```
 
 * **Task**: *SOURCES* ... package name definition
@@ -132,13 +132,13 @@ moduleclass = 'tools'
 $ eb moon-buggy-1.0.eb -r
 == temporary log file in case of crash /tmp/eb-ctAvZY/easybuild-GQkRPM.log
 == resolving dependencies ...
-== processing EasyBuild easyconfig /home/kru0052/game/moon-buggy-1.0.eb
-== building and installing moon-buggy/1.0-kru0052...
+== processing EasyBuild easyconfig /home/loginXXX/game/moon-buggy-1.0.eb
+== building and installing moon-buggy/1.0-loginXXX...
 == fetching files...
 ...
 ...
 == COMPLETED: Installation ended successfully
-== Results of the build can be found in the log file(s) /home/kru0052/.local/easybuild/software/moon-buggy/1.0-kru0052/easybuild/easybuild-moon-buggy-1.0-20181016.094918.log
+== Results of the build can be found in the log file(s) /home/loginXXX/.local/easybuild/software/moon-buggy/1.0-loginXXX/easybuild/easybuild-moon-buggy-1.0-20181016.094918.log
 == Build succeeded for 1 out of 1
 == Temporary log file(s) /tmp/eb-ctAvZY/easybuild-GQkRPM.log* have been removed.
 == Temporary directory /tmp/eb-ctAvZY has been removed.
@@ -147,6 +147,6 @@ $ eb moon-buggy-1.0.eb -r
 * **Task**: *load module and run `moon-buggy`*
 
 ```console
-$ ml moon-buggy/1.0-kru0052
+$ ml moon-buggy/1.0-loginXXX
 $ moon-buggy
 ```
