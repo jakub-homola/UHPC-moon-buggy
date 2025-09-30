@@ -150,7 +150,7 @@ $ eb moon-buggy-master.eb -r
 * **Task**: *load module and run `moon-buggy`*
 
 ```console
-$ module use /home/$HOME/.local/easybuild/modules/all
+$ module use $HOME/.local/easybuild/modules/all
 $ ml av moon-buggy
 $ ml moon-buggy
 $ moon-buggy
