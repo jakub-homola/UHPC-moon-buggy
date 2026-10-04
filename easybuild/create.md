@@ -9,14 +9,14 @@ Homepage:     [https://github.com/seehuhn/moon-buggy](https://github.com/seehuhn
 **Description**
 Moon-buggy is a simple character graphics game, where you drive some kind of car across the moon's surface. Unfortunately there are dangerous craters there. Fortunately your car can jump over them!
 
-## Manual Installation (Skip this step)
+## Manual Installation (Skip this step, this is just for illustration)
 
 ```console
-$ wget https://code.it4i.cz/jar091/moon-buggy/-/archive/master/moon-buggy-master.tar.gz
-$ tar xvf moon-buggy-master.tar.gz
-$ cd moon-buggy-master
+$ wget https://github.com/jakub-homola/UHPC-moon-buggy/archive/refs/heads/master.tar.gz
+$ tar xvf master.tar.gz
+$ cd UHPC-moon-buggy-master
 $ ./autogen.sh
-$ ./configure --prefix=$HOME/game/moon-buggy-build
+$ ./configure
 $ make
 $ ls
 acinclude.m4    buggy.h       config.h.in    copying.h  error.c      highscore.o  keyboard.c  main.o       meteor.o      moon-buggy.info  pager.o    README      terminal.c        title.eps     xmalloc.o
@@ -31,10 +31,10 @@ $ ./moon-buggy
 
 ## Create Easyconfig From Template
 
-* **Task**: *create easyconfig for `moon-buggy` (use template)*
+* **Task**: *create easyconfig for `moon-buggy` (use the provided template)*
 
 ```console
-$ wget https://code.it4i.cz/jar091/moon-buggy/-/raw/master/easybuild/template.eb
+$ wget https://raw.githubusercontent.com/jakub-homola/UHPC-moon-buggy/refs/heads/master/easybuild/template.eb
 $ cp template.eb moon-buggy-master.eb
 ```
 
@@ -56,10 +56,10 @@ name = 'moon-buggy'
 version = "master"
 ```
 
-* **Task**: *VERSIONSUFFIX* ... add your login
+* **Task**: *VERSIONSUFFIX* ... add your VSB login
 
 ```python
-versionsuffix = "-loginXXX"
+versionsuffix = "-abc0123"
 ```
 
 * **Task**: *HOMEPAGE* ... homepage url
@@ -85,13 +85,13 @@ toolchain = {'name': 'GCCcore', 'version': '10.2.0'}
 * **Task**: *SOURCE_URLS* ... source urls
 
 ```python
-source_urls = ['https://code.it4i.cz/jar091/moon-buggy/-/archive/%(version)s/']
+source_urls = ['https://github.com/jakub-homola/UHPC-moon-buggy/archive/refs/heads/']
 ```
 
 * **Task**: *SOURCES* ... package name definition
 
 ```python
-sources = ['%(name)s-%(version)s.tar.gz']
+sources = ['%(version)s.tar.gz']
 ```
 
 * **Task**: *PRECONFIGOPTS* ... autogen.sh
@@ -103,13 +103,13 @@ preconfigopts = "./autogen.sh && "
 * **Task**: *BUILDDEPENDENCY*
 
 ```python
-('Autoconf', '2.69', '')
+builddependencies = [('Autoconf', '2.69', '')]
 ```
 
 * **Task**: *DEPENDENCY*
 
 ```python
- ('ncurses', '6.2', ''),
+dependencies = [('ncurses', '6.2', '')]
 ```
 
 * **Task**: *SANITY_CHECK_PATH* ... you must check exists binary file
@@ -127,21 +127,21 @@ sanity_check_paths = {
 moduleclass = 'tools'
 ```
 
-* **Task**: *install `moon-buggy` from easyconfig*
+* **Task**: *install `moon-buggy` from easyconfig* (ignore the warnings)
 
 ```console
 $ ml purge
-$ ml EasyBuild
+$ ml EasyBuild/5.1.2
 $ eb moon-buggy-master.eb -r
 == temporary log file in case of crash /tmp/eb-ctAvZY/easybuild-GQkRPM.log
 == resolving dependencies ...
-== processing EasyBuild easyconfig /home/loginXXX/game/moon-buggy-master.eb
-== building and installing moon-buggy/master-loginXXX...
+== processing EasyBuild easyconfig /home/abc0123/game/moon-buggy-master.eb
+== building and installing moon-buggy/master-abc0123...
 == fetching files...
 ...
 ...
 == COMPLETED: Installation ended successfully
-== Results of the build can be found in the log file(s) /home/loginXXX/.local/easybuild/software/moon-buggy/master-loginXXX/easybuild/easybuild-moon-buggy-master-20181016.094918.log
+== Results of the build can be found in the log file(s) /home/abc0123/.local/easybuild/software/moon-buggy/master-abc0123/easybuild/easybuild-moon-buggy-master-20181016.094918.log
 == Build succeeded for 1 out of 1
 == Temporary log file(s) /tmp/eb-ctAvZY/easybuild-GQkRPM.log* have been removed.
 == Temporary directory /tmp/eb-ctAvZY has been removed.
@@ -153,5 +153,6 @@ $ eb moon-buggy-master.eb -r
 $ module use $HOME/.local/easybuild/modules/all
 $ ml av moon-buggy
 $ ml moon-buggy
+$ ml
 $ moon-buggy
 ```
